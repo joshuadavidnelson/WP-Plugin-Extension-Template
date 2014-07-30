@@ -10,11 +10,22 @@
  * Based upon: http://wordpress.org/plugins/google-authenticator-encourage-user-activation/
  */
 
-if ( $_SERVER['SCRIPT_FILENAME'] == __FILE__ )
-	die( 'Access denied.' );
+/**
+ * Prevent direct access to this file.
+ **/
+if( !defined( 'ABSPATH' ) ) {
+        exit( 'You are not allowed to access this file directly.' );
+}
 
-define( 'PET_REQUIRED_PHP_VERSION', '5.4.4' );  // The requied PHP version
-define( 'PET_REQUIRED_WP_VERSION',  '3.5' );    // the required WP Version
+
+/**
+ * Define the constants
+ **/
+if( !defined( 'PET_REQUIRED_PHP_VERSION' ) ) // just in case
+	define( 'PET_REQUIRED_PHP_VERSION', '5.4.4' );  // The requied PHP version
+
+if( !defined( 'PET_REQUIRED_WP_VERSION' ) ) // just in case
+	define( 'PET_REQUIRED_WP_VERSION',  '3.5' );    // the required WP Version
 
 /**
  * Checks if the system requirements are met
